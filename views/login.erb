@@ -1,0 +1,22 @@
+<html class="login-pg">
+<% if session[:message] %>
+  <h3> <%= session[:message] %> </h3>
+  <% session[:message] = nil %>
+<% end %>
+<h2 style="font-size:15px; color:white; font-weight:bold;">Please login to place your bets</h2>
+<form action="/login" method='post'>
+
+  <div style="text-align:center; padding-top: 40px; font-size:20px; color: white ">
+    User Name <input type='text' name='username'></input>
+    <span style="margin-left:2em;" ></span> 
+    Password <input type='password' name='password'></input><br><br>
+    <input type="submit" value="Logon">
+  </div>
+</form>
+ <h2 style="font-size:15px; color:white; font-weight:bold;">Don't have an account yet?</h2>
+<div style="text-align:center;">
+  <form method="get" action="/signup">   
+     <input type="submit" value="Sign Up">
+  </form>
+</div>
+</html>
